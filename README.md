@@ -1,4 +1,5 @@
-##T20 Cricket Database ETL Pipeline
+# T20 Cricket Database ETL Pipeline
+
 Designed and implemented a scalable ETL pipeline using PySpark and SQL Server to process and manage T20 cricket match data, ensuring efficient data ingestion, transformation, and storage.
 
 Implemented incremental load and full load strategies to handle large datasets, optimizing performance and reducing processing time.
