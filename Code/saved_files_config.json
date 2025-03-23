@@ -1,0 +1,194 @@
+[
+    {
+        "table_name": "Team",
+        "format": "csv",
+        "directory": "data/Team",
+        "data_types": {
+            "TeamID": "int",
+            "TeamName": "string"
+        },
+        "options": {
+            "header": "true",
+            "inferSchema": "true"
+        },
+        "loading": "truncate load",
+        "unique_key_columns": ["TeamID"]
+    },
+    {
+        "table_name": "Player",
+        "format": "parquet",
+        "directory": "data/Player",
+        "data_types": {
+            "PlayerID": "int",
+            "PlayerName": "string"
+        },
+        "options": {},
+        "loading": "truncate load"
+    },
+    {
+        "table_name": "PlayerSeason",
+        "format": "json",
+        "directory": "data/PlayerSeason",
+        "data_types": {
+            "Season": "int",
+            "PlayerID": "int",
+            "TeamID": "int"
+        },
+        "options": {},
+        "loading": "truncate load"
+    },
+    {
+        "table_name": "Match",
+        "format": "csv",
+        "directory": "data/Match",
+        "data_types": {
+            "MatchID": "int",
+            "Season": "int",
+            "MatchDate": "date",
+            "Team1ID": "int",
+            "Team2ID": "int",
+            "PlayerOfMatchID": "int",
+            "City": "string",
+            "Venue": "string",
+            "DLMethodApplied": "int",
+            "TossWinningTeamID": "int"
+        },
+        "options": {
+            "header": "true",
+            "inferSchema": "true",
+            "sep": "\t"
+        },
+        "loading": "incremental load",
+        "unique_key_columns": ["MatchID"]
+    },
+
+    {
+        "table_name": "MatchResult",
+        "format": "json",
+        "directory": "data/MatchResult",
+        "data_types": {
+            "MatchID": "int",
+            "TeamID": "int",
+            "Result": "string",
+            "Runs": "int",
+            "Wickets": "int"
+        },
+        "options": {},
+        "loading": "truncate load"
+    },
+    {
+        "table_name": "DismissalType",
+        "format": "csv",
+        "directory": "data/DismissalType",
+        "data_types": {
+            "DismissalTypeID": "int",
+            "DismissalType": "string",
+            "IsDismissal": "int",
+            "BowlersWicket": "int"
+        },
+        "options": {
+            "header": "true",
+            "inferSchema": "true",
+            "sep": "\t"
+        },
+        "loading": "truncate load"
+    },
+    {
+        "table_name": "ScoringType",
+        "format": "csv",
+        "directory": "data/ScoringType",
+        "data_types": {
+            "ScoringTypeID": "int",
+            "ScoringType": "string",
+            "ScoreAggregationType": "string"
+        },
+        "options": {
+            "header": "true",
+            "inferSchema": "true"
+        },
+        "loading": "truncate load"
+    },
+    {
+        "table_name": "BallType",
+        "format": "parquet",
+        "directory": "data/BallType",
+        "data_types": {
+            "BallTypeID": "int",
+            "BallType": "string"
+        },
+        "options": {},
+        "loading": "truncate load"
+    },
+    {
+        "table_name": "BallbyBallActivity",
+        "format": "json",
+        "directory": "data/BallbyBallActivity",
+        "data_types": {
+            "MatchID": "int",
+            "inningID": "int",
+            "OverNo": "int",
+            "BallNO": "int",
+            "BowlerID": "int",
+            "BatsmanID": "int",
+            "NonStrikerID": "int",
+            "ScoringTypeID": "int",
+            "BallTypeID": "int",
+            "Runs": "int",
+            "DismissedPlayerID": "int",
+            "DismissalTypeID": "int",
+            "FielderID": "int"
+        },
+        "options": {},
+        "loading": "incremental load",
+        "unique_key_columns": [
+            "MatchID",
+            "inningID",
+            "OverNo",
+            "BallNO",
+            "ScoringTypeID"        
+        ]
+    },
+    {
+        "table_name": "BallbyBallActivity_Full_load",
+        "format": "json",
+        "directory": "data/BallbyBallActivity_Full_load",
+        "data_types": {
+            "MatchID": "int",
+            "inningID": "int",
+            "OverNo": "int",
+            "BallNO": "int",
+            "BowlerID": "int",
+            "BatsmanID": "int",
+            "NonStrikerID": "int",
+            "ScoringTypeID": "int",
+            "BallTypeID": "int",
+            "Runs": "int",
+            "DismissedPlayerID": "int",
+            "DismissalTypeID": "int",
+            "FielderID": "int"
+        },
+        "options": {},
+        "loading": "none",
+        "unique_key_columns": [
+            "MatchID",
+            "inningID",
+            "OverNo",
+            "BallNO",
+            "ScoringTypeID"        
+        ]
+    },
+    {
+        "table_name": "TeamSeason",
+        "format": "csv",
+        "directory": "data/TeamSeason",
+        "data_types": {
+            "TeamID": "int",
+            "Season": "int"
+        },
+        "options": {
+            "header": "true",
+            "inferSchema": "true"
+        },
+        "loading": "truncate load"
+    }
+]

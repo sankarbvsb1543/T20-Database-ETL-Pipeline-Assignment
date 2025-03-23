@@ -1,0 +1,15 @@
+{
+   "source_database": {
+       "url": "jdbc:sqlserver://PTDELL0315:1433;databaseName=T20;encrypt=true;trustServerCertificate=true",
+       "user": "YOUR USERNAME",
+       "password": "YOUR PASSWORD",
+       "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+   },
+   "storage_root": "data/",
+   "target_database": {
+       "url": "jdbc:sqlserver://PTDELL0315:1433;databaseName=T20_Target;encrypt=true;trustServerCertificate=true",
+       "user": "YOUR USERNAME",
+       "password": "YOUR PASSWORD",
+       "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+   }
+}

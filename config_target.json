@@ -1,0 +1,9 @@
+{
+    "database": {
+        "url": "jdbc:sqlserver://PTDELL0315:1433;databaseName=T20_Target;encrypt=true;trustServerCertificate=true",
+        "user": "YOUR USER NAME",
+        "password": "YOUR PASSWORD",
+        "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    },
+    "storage_root": "data/"
+ }
